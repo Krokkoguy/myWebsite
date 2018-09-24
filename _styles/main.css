@@ -187,9 +187,10 @@ aside .close:hover{
 
 /*MAIN ELEMENTS*/
 main article{
+    position: relative;
 
     grid-column: 1 / -1;
-
+    
     min-height: 200px;
     padding-bottom: 1rem;
 
@@ -203,7 +204,8 @@ main article{
 }
 
 main article header {
-
+    position: absolute;
+    width: 100%;
     display: block;
 
     padding: 5px;
@@ -211,7 +213,7 @@ main article header {
     font-variant: small-caps;
     text-align: center;
 
-    background-color: #FFEBAF;
+    background-color: hsl(45, 100%, 100%, 0.5);
     box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
 }
 
@@ -227,7 +229,10 @@ main article a:link {
     color: black;
 }
 main article time {
-    color: rgb(128, 118, 99);
+    color: rgba(0, 0, 0, 0.7);
+}
+main article time::before, main article time::after {
+    content: '-';
 }
 
 /*PREVIEW ELEMENTS*/
@@ -238,6 +243,11 @@ main article.preview {
     overflow: hidden;
 
     max-height: 500px;
+}
+
+main article.preview header {
+    position: relative;
+    background-color: #FFEBAF;
 }
 
 
