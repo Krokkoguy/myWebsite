@@ -1,0 +1,172 @@
+#open_aside {
+	/*Skal ikke være nødvendig da denne linken uansett skal fjernes*/
+	display: none;
+}
+
+/*NAVBAR*/
+nav.main {
+    grid-area: nav;
+
+    display: flex;
+	position: sticky;
+
+    top: 0;
+    height: 4rem;
+    z-index: 10;
+
+    background-color: #DDD;
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+	font-variant: small-caps;
+
+}
+
+/*NAV ELEMENTS*/
+nav .navbtn {
+	position: relative;
+
+	display: inline-block;
+	flex: 1;
+
+	height: 100%;
+
+	text-align: center;
+
+    transition-duration: 0.2s;
+
+	background-color: #f1c642;
+	color: whitesmoke;
+
+}
+
+.navbtn:hover {
+	flex-grow: 1.5;
+
+	height: 120%;
+
+	/*ved ekstremt små resolusjoner vil dropdown menyer tvinge parent elementet	*/
+	/*til å få en større bredde enn det den skal. Dette skal bare skje når den 	*/
+	/*blir hoveret over															*/
+	overflow: visible;
+
+	background-color: #DB0;
+	color: white;
+
+}
+
+/*for å legge skygge over sibling elementer og child elementer*/
+.navbtn::before {
+	content: '';
+	display: block;
+	position: absolute;
+	top:0; right:0; bottom:0; left:0;
+	z-index: 1;
+}
+.navbtn:hover::before {
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+/*NAV ICONS*/
+.navbtn>i, .navIconAlt {
+	display: inline-block;
+	padding-top: 10px;
+}
+
+.navbtn>i {
+	font-size: 1.5rem;
+}
+
+.navIconAlt {
+	font-size: 1.2rem;
+}
+
+/*link stil*/
+nav a, nav a:hover {
+
+    text-decoration: none;
+}
+
+
+.navbtn:active {
+
+    background-color: #970;
+}
+
+
+/*NAV DROPDOWN*/
+.dropdownList {
+	position: absolute;
+	top: 100%;
+
+
+	width: 100%;
+	max-height: 40vh;
+
+	overflow-y: auto;
+
+}
+/*deaktiverte dropdown listeelementer*/
+.dropdownListItem {
+	position: relative;
+	display: block;
+	
+	overflow: hidden;
+    max-height: 0;
+
+    text-align: left;
+
+	background-color: #f1c642;
+    
+    transition-duration: 0.3s;
+}
+
+/*aktiverte dropdown listeelementer*/
+.dropdown:hover .dropdownListItem {
+    
+	padding: 1rem;
+    max-height: 100vh;
+
+    background-color: #95c3c9;
+    
+}
+
+/*dropdown knapp hover*/
+.dropdown .dropdownListItem:hover {
+
+    background-color: #4ca0ac;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.2) inset;
+}
+
+/*dropdown knapp active*/
+.dropdownListItem:active {
+    background-color: #007081;
+    
+}
+
+
+
+/*liten ~ medium desktop*/
+@media only screen and (min-width : 768px) {
+
+	nav.main {
+		display: flex;
+		height: 40px;
+		padding-right: 40%;
+    }
+
+}
+
+/*mobil*/
+@media only screen and (max-width : 600px) {
+
+	.dropdown {
+		min-width: 50px;
+	}
+	.dropdown:hover {
+		min-width: 90px;
+	}
+	.navIconAlt {
+
+		display: none;
+	}
+
+}

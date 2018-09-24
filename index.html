@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<title>Ask HB - Home</title>
+		<!--trenger flere meta tags her-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="_styles/main.css">
+		<link rel="stylesheet" type="text/css" href="_styles/nav.css">
+
+
+	</head>
+
+	<body class="homepage">
+
+		<header class="main">
+			
+			<h1>Ask H. B.</h1>
+
+		</header>
+
+		<!--######## NAV BAR ########-->
+		<nav class="main" >
+
+            <a href="#main_aside" id="open_aside" class="navbtn">
+
+				<i class="fa fa-caret-down"></i>
+				
+            </a>
+
+			<a href="index.html" class="navbtn">
+
+                <i class="fa fa-home"></i>
+				<span class="navIconAlt">Home</span>
+
+			</a>
+
+			<div class="dropdown navbtn">
+
+				<!--TODO: bytt fra icon-font til SVG-->
+                <i class="fa fa-graduation-cap"></i>
+				<span class="navIconAlt">Courses</span>
+				
+				<div class="dropdownList">
+
+					<a href="#" class="dropdownListItem">
+						<i class="fa fa-code"></i>
+						Web-development
+					</a>
+					<a href="#" class="dropdownListItem">
+						<i class="fab fa-js"></i>
+						Introduction to Programming
+					</a>
+					<a href="#" class="dropdownListItem">
+						<i class="fas fa-hdd"></i>
+						GrIT
+					</a>
+
+				</div>
+					
+			</div>
+
+			<!--######## QUICK LINKS ########-->
+
+			<a href="git.html" class="navbtn">
+
+                <i class="fab fa-git-square"></i>
+                <span class="navIconAlt">Github</span>
+                
+			</a>
+
+			<a href="mediatyper.html" class="navbtn">
+
+                <i class="fas fa-tablet-alt"></i>
+                <span class="navIconAlt">Media</span>
+                
+			</a>
+
+			<a href="layouts.html" class="navbtn">
+
+                <i class="fab fa-css3"></i>
+                <span class="navIconAlt">CSS</span>
+                
+			</a>
+
+			<!--MORE LINKS-->
+
+			<div class="dropdown navbtn">
+
+                <i class="fa fa-ellipsis-h"></i>
+                <span class="navIconAlt">More</span>
+                
+				<div class="dropdownList">
+
+					<a href="#" class="dropdownListItem">test1</a>
+					<a href="#" class="dropdownListItem">test2</a>
+					<a href="#" class="dropdownListItem">test3</a>
+					<a href="#" class="dropdownListItem">test4</a>
+
+                </div>
+                
+			</div>
+
+		</nav>
+
+		<!-- ######## ASIDE MENU ########-->
+
+		<aside class="main" id="main_aside">
+
+			<!--lukkeknapp-->
+			<a href="#" class="close">
+				<img src="resources/icons/close.png" alt="X">
+			</a>
+
+			<section> 
+
+				<header>
+					<h2>Youtube</h2>
+				</header>
+
+				<div style="position:relative;height:0;padding-bottom:56.28%">
+					<iframe src="https://www.youtube.com/embed/Zftx68K-1D4?ecver=2" style="position:absolute;width:100%;height:100%;left:0" width="640" height="360" frameborder="0" allowfullscreen>
+					</iframe>
+				</div>
+
+			</section>
+
+			<section>
+
+				<header>
+					<h2>Responsivt design</h2>
+				</header>
+
+				<a href="https://www.w3schools.com/html/html_responsive.asp" target="_blank">w3schools.com</a>
+				<a href="https://smallbiztrends.com/2013/05/what-is-responsive-web-design.html" target="blank">smallbiztrends.com</a>
+				<a href="https://designmodo.com/responsive-design-examples/" target="_blank">designmodo.com</a>
+				<a href="https://learn.shayhowe.com/advanced-html-css/responsive-web-design/" target="blank">learn.shayhowe.com</a>
+				<a href="https://css-tricks.com/the-difference-between-responsive-and-adaptive-design/" target="_blank">css-tricks.com</a>
+			
+			</section>
+
+			<section>
+
+				<header>
+					<h2>Google.com</h2>
+				</header>
+
+				<a href="https://www.google.no/search?q=github&oq=github&aqs=chrome..69i57j69i60l4j0.1201j0j7&sourceid=chrome&ie=UTF-8" target="blank" class="button">søk på Github</a>
+			
+			</section>
+
+		</aside>
+
+		<main>
+
+			<article >
+
+				<header>
+					<h2>Git/Github</h2>
+					<time datetime="2018-15-09">15/09/2018</time>
+				</header>
+
+				<figure>
+					<!--preview img-->
+					<img src="resources/pictures/illustration_code_banner.jpg" alt="Skjerm med kode"/>
+				</figure>
+
+				<p>GIT GHUBUB</p>
+				<a href="git.html">Les mer</a>
+
+			</article>
+
+			<article class="preview" >
+
+				<header>
+					<h2>Media typer</h2>
+					<time datetime="2018-15-09">15/09/2018</time>
+				</header>
+
+				<figure>
+					<!--preview img-->
+					<img src="resources/pictures/illustration_media.jpg" alt="Laptop og et kamera"/>
+				</figure>
+
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim eum aliquam accusamus odio magni id, reiciendis dicta. Nesciunt cupiditate dolorem, deserunt id velit autem, eius dolorum molestias magni facere iste.</p>
+				<a href="mediatyper.html">Les mer</a>
+
+			</article>
+
+			<article class="preview" >
+
+				<header>
+					<h2>CSS layouts</h2>
+					<time datetime="2018-15-09">15/09/2018</time>
+				</header>
+
+				<figure>
+					<!--preview img-->
+					<img src="resources/pictures/illustration_layout.jpg" alt="Skjerm med CSS kode"/>
+				</figure>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim eum aliquam accusamus odio magni id, reiciendis dicta. Nesciunt cupiditate dolorem, deserunt id velit autem, eius dolorum molestias magni facere iste.</p>
+				<a href="layouts.html">Les mer</a>
+
+			</article>
+
+		</main>
+
+		<footer class="main">
+
+			<time datetime="2018">2018  &copy;</time>
+
+			<address>
+
+				<p>Ask Hetland Berentsen</p>
+				<p>+47 9925 6499</p>
+
+				<p>Privat: <a href="mailto://askberentsen@gmail.com">askberentsen@gmail.com</a></p>
+				<p>Skole: <a href="mailto://askhb@hiof.no">askhb@hiof.no</a></p>
+
+			</address>
+
+
+
+		</footer>
+
+
+	</body>
+
+<html>

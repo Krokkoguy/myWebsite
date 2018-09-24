@@ -1,0 +1,362 @@
+/*TODO: more alternatives to picture sizes*/
+
+/*GENERAL SETUP*/
+html {
+    font-size: 10px;
+}
+body {
+    background-color: #95a4ab;
+
+    display: grid;
+    grid-template-areas: 
+        'head head head head head head'
+        'nav  nav  nav  nav  nav nav'
+        'menu main main main main main'
+        'menu foot foot foot foot foot';
+    grid-gap: 0;
+
+    background-image: url("../resources/pictures/background1.jpg");
+    background-size: cover;
+    color: #305257;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body.article{
+    grid-template-areas: 
+        'head head head head head head'
+        'nav  nav  nav  nav  nav  nav '
+        'main main main main main main'
+        'foot foot foot foot foot foot';
+}
+
+* {
+    box-sizing: border-box;
+    
+	padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    text-decoration: underline;
+    color: inherit;
+}
+a:active {
+    /*bruker !important her fordi transition til aktive linker skal være umiddelbare.*/
+    /*denne blir overstyrt av :hover definisjoner automatisk uten !important*/
+    transition: unset !important;
+    color: inherit;
+}
+a:visited {
+    color: inherit;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: black;
+}
+
+/*SEMANTIC MAIN SECTIONS*/
+
+header.main {
+    grid-area: head;
+    height: 4rem;
+	background-color: salmon;
+	background-image: url("../resources/pictures/background2.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+/*nav{} -> eget stilark*/
+
+main {
+    grid-area: main;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2.5rem;
+
+    padding: 8vh 6vw;
+    max-width: 1000px;
+    margin: auto;
+}
+
+aside.main {
+    grid-area: menu;
+
+    /*bruker sticky her for å bryte flyten*/
+    position: sticky;
+
+    padding: 1rem;
+    padding-top: Calc(8vh + 4rem);
+    top: 4rem;
+    bottom:0px;
+
+    /*4rem er høyden på navbaren*/
+    max-height: Calc(100vh - 4rem);
+    width: 30vw;
+    max-width: 30rem;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    background-color: #EEE;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+}
+
+footer.main {
+    grid-area: foot;
+
+    position: sticky;
+    top: Calc(100vh - 16rem);
+
+    margin-top: 6rem;
+    padding: 2rem 4rem;
+    height: 16rem;
+
+    background-image: linear-gradient(to bottom, rgba(17,17,17,0.5), #111);
+    color: #7c7c7c;
+}
+
+/*HEADER ELEMENTS*/
+
+header.main h1 {
+
+    display: inline-block;
+    height:100%;
+    padding: 0.5rem 2rem;
+    font-size: 2rem;
+    
+	background-color: hsla(360, 100%, 0%, 0.5);
+	color: hsl(100, 0%, 90%);
+}
+
+/*NAV ELEMENTS*/
+
+/*nav{} -> eget stilark*/
+
+/*ASIDE ELEMENTS*/
+aside section{
+
+    padding: 1rem;
+    margin-bottom: 10px;
+
+    background-color: white;
+    box-shadow: 2px 2px 5px -2px rgba(17,17,17,0.4);
+}
+aside h2 {
+    font-size: 2rem;
+}
+aside header {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+aside p, aside a {
+    display: block;
+    font-size: 1.3rem;
+    padding: 0.2rem;
+}
+aside .close {
+
+    display: none;
+    position: relative;
+
+    float: right;
+
+    top: -4.5rem;
+    background-color: rgba(0,0,0,0.2);
+    border-radius: 0.5rem;
+
+    margin: 1px;
+
+    filter: brightness(0.6);
+}
+aside .close img {
+    position: relative;
+    top: 0.2rem;
+}
+aside .close:hover{
+    background-color: rgba(0,0,0,0.3);
+    filter: brightness(0);
+}
+
+/*MAIN ELEMENTS*/
+main article{
+
+    grid-column: 1 / -1;
+
+    min-height: 200px;
+    padding-bottom: 1rem;
+
+    text-align: justify;
+
+    background-color: whitesmoke;
+    border-bottom: 5px solid #FFEBAF;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+
+    
+}
+
+main article header {
+
+    display: block;
+
+    padding: 5px;
+
+    font-variant: small-caps;
+    text-align: center;
+
+    background-color: #FFEBAF;
+    box-shadow: 0px 2px 5px -2px rgba(0,0,0,0.5);
+}
+
+main article p, main article a {
+
+    margin: 1rem;
+    margin-bottom: 0;
+    
+    font-size: 1.4rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+main article a:link {
+    color: black;
+}
+main article time {
+    color: rgb(128, 118, 99);
+}
+
+/*PREVIEW ELEMENTS*/
+
+main article.preview {
+
+    grid-column: auto;
+    overflow: hidden;
+
+    max-height: 500px;
+}
+
+
+main article img {
+    max-width: 100%;
+}
+
+main article.preview figure {
+    padding: 0;
+}
+
+main article.preview a {
+    display: block;
+
+    text-align: center;
+    font-size: 1.3rem;
+}
+main article.preview p {
+    font-size: 1.2rem;
+}
+
+/*FOOTER ELEMENTS*/
+
+footer p, footer time {
+    display: block;
+    margin: 0.5rem;
+}
+footer time {
+    width: 15rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #7c7c7c;
+}
+
+/*TECHNICAL*/
+#open_aside {
+
+    display: none;
+}
+
+.button {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 7px;
+
+    text-align: center;
+    width: fit-content;
+
+    background-color: #FFEBAF;
+    border-radius: 0.9rem;
+    border-bottom: 2px solid #d8c794;
+}
+.button:hover {
+    background-color: #f0d891;
+    text-decoration: none;
+}
+.button:active {
+    background-color: rgb(204, 175, 87);
+    border-radius: 0.9rem;
+    border-bottom: 0px;
+    border-top: 2px solid #ac9960;
+    color: inherit;
+}
+
+
+/*stor desktop*/
+@media only screen and (min-width : 1200px) {
+
+    main {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+/*Tablet*/
+@media only screen and (max-width : 768px) {
+    main {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/*mobil*/
+@media only screen and (max-width : 600px) {
+    body {
+
+        grid-template-areas: 
+            'head head head'
+            'nav  nav  nav '
+            'main main main'
+            'foot foot foot';
+    }
+
+    main {
+
+        grid-template-columns: 1fr;
+    }
+    
+    #open_aside {
+
+        display: block;
+    }
+
+    aside.main {
+
+        display: none;
+        position: fixed;
+        padding-top: 5rem;
+
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+        min-width: 20rem;
+        width: 60%;
+        max-height: 100vh;
+        height: 100vh;
+    }
+
+    aside.main:target, aside .close{
+        display: block;
+    }
+    
+}

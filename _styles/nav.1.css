@@ -1,0 +1,165 @@
+body.article #open_aside {
+	/*Skal ikke være nødvendig da denne linken uansett skal fjernes*/
+	display: none;
+}
+
+/*NAVBAR*/
+nav.main {
+    grid-area: nav;
+
+    display: flex;
+	position: sticky;
+
+    top: 0;
+    height: 4rem;
+    z-index: 10;
+
+    background-color: #DDD;
+	box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+	font-variant: small-caps;
+
+}
+
+/*NAV ELEMENTS*/
+nav.main>* {
+
+	display: inline-block;
+	flex: 1;
+
+	height: 100%;
+
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+
+    transition: height 0.3s, flex 0.3s, background 0.3s;
+
+	background-color: #f1c642;
+	color: whitesmoke;
+
+}
+
+nav.main>*:hover {
+	flex-grow: 1.5;
+
+	height: 120%;
+
+	/*ved ekstremt små resolusjoner vil dropdown menyer tvinge parent elementet	*/
+	/*til å få en større bredde enn det den skal. Dette skal bare skje når den 	*/
+	/*blir hoveret over															*/
+	overflow: visible;
+
+	background-color: #DB0;
+	color: white;
+
+	/*TODO: finn ut hvordan man kan legge skygge på sibling elementer uten å messe med dropdown menyen*/
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+nav.main #goto_home {
+	min-width: 10vw;
+}
+/*NAV ICONS*/
+
+nav>*>i {
+	position: relative;
+	top: 2px;
+
+	padding: 10px 0;
+	height: 80%;
+	/*Siden ikoner er fra et importert stilark må jeg bruke !important for å overstyre størrelsen på ikonet*/
+	font-size: 1.5rem;
+}
+/**/
+nav span {
+	padding: 10px;
+	display: inline-block;
+	font-size: 1.3rem;
+
+	height: 100%;
+}
+
+nav a, nav a:hover {
+
+    text-decoration: none;
+}
+
+
+nav.main>a:active {
+
+    background-color: #970;
+}
+
+
+/*NAV DROPDOWN*/
+
+/*dropdown wrapper*/
+nav.main .dropdown div{
+
+	position: relative;
+
+	/*dropdown menyen skal skjules bak dropdown knappen*/
+	z-index: -1;
+
+    height: fit-content;
+}
+
+
+/*deaktiverte dropdown menyknapper*/
+nav.main .dropdown a {
+    display: block;
+    
+    max-height: 0;
+
+    text-align: left;
+
+	background-color: #f1c642;
+    
+    transition-duration: 0.3s;
+}
+
+/*aktiverte dropdown menyknapper*/
+nav.main .dropdown:hover a {
+    
+    padding: 1rem;
+    max-height: 10rem;
+
+    background-color: #95c3c9;
+    
+}
+
+/*dropdown knapp hover*/
+nav.main .dropdown a:hover {
+
+    background-color: #4ca0ac;
+	box-shadow: 5px 5px 10px rgba(0,0,0,0.2) inset;
+}
+
+/*dropdown knapp active*/
+nav.main .dropdown a:active {
+    background-color: #007081;
+    
+}
+
+
+/*liten ~ medium desktop*/
+@media only screen and (min-width : 768px) {
+
+	nav.main {
+		display: flex;
+		height: 40px;
+		padding-right: 40%;
+    }
+
+}
+
+/*mobil*/
+@media only screen and (max-width : 600px) {
+
+
+	nav.main span {
+
+		display: none;
+	}
+
+}
